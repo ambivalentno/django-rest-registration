@@ -18,6 +18,7 @@ def send_verification(user, params_signer, template_config, email=None):
         'user': user,
         'email': email,
         'verification_url':  params_signer.get_url(),
+        'verification_data': params_signer.get_signed_data()
     }
     subject = subject_template.render(ctx).strip()
     body = body_template.render(ctx)
